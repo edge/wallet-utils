@@ -1,0 +1,16 @@
+{
+  "name": "@edge/wallet-utils",
+  "version": "0.1.0",
+  "description": "Wallet utility library for the XE blockchain",
+  "main": "lib/index.js",
+  "author": "Edge Network <core@edge.network>",
+  "contributors": [
+    "Adam K Dean <adam@edge.network>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "elliptic": "^6.5.4",
+    "js-sha3": "^0.8.0"
+  }
+}
