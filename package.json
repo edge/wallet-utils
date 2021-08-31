@@ -5,7 +5,8 @@
   "main": "dist/lib/index.js",
   "author": "Edge Network <core@edge.network>",
   "contributors": [
-    "Adam K Dean <adam@edge.network>"
+    "Adam K Dean <adam@edge.network>",
+    "Aneurin \"Anny\" Barker Snook <aneurin@edge.network>"
   ],
   "license": "MIT",
   "scripts": {
