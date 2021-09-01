@@ -33,7 +33,7 @@ const ec = new elliptic.ec('secp256k1')
 //
 // Key/account generation
 //
-function generateKeyPair() {
+export function generateKeyPair(): elliptic.ec.KeyPair {
   return ec.genKeyPair()
 }
 

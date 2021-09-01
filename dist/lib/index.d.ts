@@ -12,6 +12,7 @@ declare type Wallet = {
     privateKey: PrivateKey;
     publicKey: PublicKey;
 };
+export declare function generateKeyPair(): elliptic.ec.KeyPair;
 export declare function generateWallet(): Wallet;
 export declare function generateChecksumAddress(address: Address): ChecksumAddress;
 export declare function checksumAddressIsValid(address: Address): boolean;

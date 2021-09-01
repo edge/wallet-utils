@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.recoverAddressFromSignedMessage = exports.recoverPublicKeyFromSignedMessage = exports.verifySignatureAddress = exports.generateSignature = exports.formatXe = exports.toMicroXe = exports.xeStringFromMicroXe = exports.privateKeyToChecksumAddress = exports.privateKeyToPublicKey = exports.publicKeyToChecksumAddress = exports.checksumAddressIsValid = exports.generateChecksumAddress = exports.generateWallet = void 0;
+exports.recoverAddressFromSignedMessage = exports.recoverPublicKeyFromSignedMessage = exports.verifySignatureAddress = exports.generateSignature = exports.formatXe = exports.toMicroXe = exports.xeStringFromMicroXe = exports.privateKeyToChecksumAddress = exports.privateKeyToPublicKey = exports.publicKeyToChecksumAddress = exports.checksumAddressIsValid = exports.generateChecksumAddress = exports.generateWallet = exports.generateKeyPair = void 0;
 var sha256_1 = __importDefault(require("crypto-js/sha256"));
 var elliptic_1 = __importDefault(require("elliptic"));
 var js_sha3_1 = require("js-sha3");
@@ -11,6 +11,7 @@ var ec = new elliptic_1["default"].ec('secp256k1');
 function generateKeyPair() {
     return ec.genKeyPair();
 }
+exports.generateKeyPair = generateKeyPair;
 function generateWallet() {
     var keyPair = generateKeyPair();
     var privateKey = keyPair.getPrivate('hex').toString();
