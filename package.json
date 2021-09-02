@@ -10,7 +10,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build-and-test": "npm run build && npm test",
+    "test": "node dist/lib/tests.js"
   },
   "dependencies": {
     "crypto-js": "^4.0.0",
