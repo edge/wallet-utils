@@ -1,3 +1,6 @@
+dist/**/*.tsbuildinfo
+dist/lib/tests.*
 node_modules/
 npm-debug.log
+package-lock.json
 .DS_Store
