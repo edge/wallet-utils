@@ -1,6 +1,6 @@
 {
   "name": "@edge/wallet-utils",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Wallet utility library for the XE blockchain",
   "main": "dist/lib/index.js",
   "author": "Edge Network <core@edge.network>",
