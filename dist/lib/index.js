@@ -111,3 +111,19 @@ function recoverAddressFromSignedMessage(msg, signature) {
     return derivedAddress;
 }
 exports.recoverAddressFromSignedMessage = recoverAddressFromSignedMessage;
+exports["default"] = {
+    generateKeyPair: generateKeyPair,
+    generateWallet: generateWallet,
+    generateChecksumAddress: generateChecksumAddress,
+    checksumAddressIsValid: checksumAddressIsValid,
+    publicKeyToChecksumAddress: publicKeyToChecksumAddress,
+    privateKeyToChecksumAddress: privateKeyToChecksumAddress,
+    privateKeyToPublicKey: privateKeyToPublicKey,
+    generateSignature: generateSignature,
+    verifySignatureAddress: verifySignatureAddress,
+    recoverPublicKeyFromSignedMessage: recoverPublicKeyFromSignedMessage,
+    recoverAddressFromSignedMessage: recoverAddressFromSignedMessage,
+    xeStringFromMicroXe: xeStringFromMicroXe,
+    toMicroXe: toMicroXe,
+    formatXe: formatXe
+};

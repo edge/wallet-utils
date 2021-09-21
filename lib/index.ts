@@ -138,3 +138,20 @@ export function recoverAddressFromSignedMessage(msg: Message, signature: Signatu
   const derivedAddress = publicKeyToChecksumAddress(publicKey)
   return derivedAddress
 }
+
+export default {
+  generateKeyPair,
+  generateWallet,
+  generateChecksumAddress,
+  checksumAddressIsValid,
+  publicKeyToChecksumAddress,
+  privateKeyToChecksumAddress,
+  privateKeyToPublicKey,
+  generateSignature,
+  verifySignatureAddress,
+  recoverPublicKeyFromSignedMessage,
+  recoverAddressFromSignedMessage,
+  xeStringFromMicroXe,
+  toMicroXe,
+  formatXe
+}

@@ -26,4 +26,20 @@ export declare function generateSignature(privateKey: SigningPrivateKey, msg: Me
 export declare function verifySignatureAddress(msg: string, signature: Signature, address: Address): boolean;
 export declare function recoverPublicKeyFromSignedMessage(msg: Message, signature: Signature): PublicKey;
 export declare function recoverAddressFromSignedMessage(msg: Message, signature: Signature): Address;
-export {};
+declare const _default: {
+    generateKeyPair: typeof generateKeyPair;
+    generateWallet: typeof generateWallet;
+    generateChecksumAddress: typeof generateChecksumAddress;
+    checksumAddressIsValid: typeof checksumAddressIsValid;
+    publicKeyToChecksumAddress: typeof publicKeyToChecksumAddress;
+    privateKeyToChecksumAddress: typeof privateKeyToChecksumAddress;
+    privateKeyToPublicKey: typeof privateKeyToPublicKey;
+    generateSignature: typeof generateSignature;
+    verifySignatureAddress: typeof verifySignatureAddress;
+    recoverPublicKeyFromSignedMessage: typeof recoverPublicKeyFromSignedMessage;
+    recoverAddressFromSignedMessage: typeof recoverAddressFromSignedMessage;
+    xeStringFromMicroXe: typeof xeStringFromMicroXe;
+    toMicroXe: typeof toMicroXe;
+    formatXe: typeof formatXe;
+};
+export default _default;
