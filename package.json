@@ -8,7 +8,7 @@
     "Adam K Dean <adam@edge.network>",
     "Aneurin \"Anny\" Barker Snook <aneurin@edge.network>"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "build": "tsc",
     "build-and-test": "npm run build && npm test",
