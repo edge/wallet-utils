@@ -25,7 +25,7 @@ export type Wallet = {
 }
 
 //
-// Key/account generation
+// Key/account generation & restoration
 //
 export function generateKeyPair(): elliptic.ec.KeyPair {
   return ec.genKeyPair()
@@ -56,6 +56,13 @@ export function checksumAddressIsValid(address: Address): boolean {
   if (!/^(xe_[a-fA-F0-9]{40})$/.test(address)) return false
   if (address !== generateChecksumAddress(address)) return false
   return true
+}
+
+export function restoreWalletFromPrivateKey(privateKey: PrivateKey): Wallet {
+  const keyPair = ec.keyFromPrivate(privateKey)
+  const publicKey = keyPair.getPublic(true, 'hex').toString()
+  const address = publicKeyToChecksumAddress(publicKey)
+  return { privateKey, publicKey, address }
 }
 
 //
@@ -138,6 +145,7 @@ export default {
   generateWallet,
   generateChecksumAddress,
   checksumAddressIsValid,
+  restoreWalletFromPrivateKey,
   publicKeyToChecksumAddress,
   privateKeyToChecksumAddress,
   privateKeyToPublicKey,
