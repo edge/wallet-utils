@@ -1,12 +1,12 @@
 /// <reference types="node" />
 import elliptic from 'elliptic';
-declare type Address = string;
-declare type ChecksumAddress = Address;
-declare type Message = string;
-declare type PrivateKey = Uint8Array | Buffer | string | number[] | elliptic.ec.KeyPair;
-declare type PublicKey = string;
-declare type Signature = string;
-declare type Wallet = {
+export declare type Address = string;
+export declare type ChecksumAddress = Address;
+export declare type Message = string;
+export declare type PrivateKey = Uint8Array | Buffer | string | number[] | elliptic.ec.KeyPair;
+export declare type PublicKey = string;
+export declare type Signature = string;
+export declare type Wallet = {
     address: Address;
     privateKey: PrivateKey;
     publicKey: PublicKey;
@@ -15,6 +15,7 @@ export declare function generateKeyPair(): elliptic.ec.KeyPair;
 export declare function generateWallet(): Wallet;
 export declare function generateChecksumAddress(address: Address): ChecksumAddress;
 export declare function checksumAddressIsValid(address: Address): boolean;
+export declare function restoreWalletFromPrivateKey(privateKey: PrivateKey): Wallet;
 export declare function publicKeyToChecksumAddress(publicKey: PublicKey): ChecksumAddress;
 export declare function privateKeyToPublicKey(privateKey: PrivateKey): PublicKey;
 export declare function privateKeyToChecksumAddress(privateKey: PrivateKey): ChecksumAddress;
@@ -30,6 +31,7 @@ declare const _default: {
     generateWallet: typeof generateWallet;
     generateChecksumAddress: typeof generateChecksumAddress;
     checksumAddressIsValid: typeof checksumAddressIsValid;
+    restoreWalletFromPrivateKey: typeof restoreWalletFromPrivateKey;
     publicKeyToChecksumAddress: typeof publicKeyToChecksumAddress;
     privateKeyToChecksumAddress: typeof privateKeyToChecksumAddress;
     privateKeyToPublicKey: typeof privateKeyToPublicKey;

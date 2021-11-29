@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.recoverAddressFromSignedMessage = exports.recoverPublicKeyFromSignedMessage = exports.verifySignatureAddress = exports.generateSignature = exports.formatXe = exports.toMicroXe = exports.xeStringFromMicroXe = exports.privateKeyToChecksumAddress = exports.privateKeyToPublicKey = exports.publicKeyToChecksumAddress = exports.checksumAddressIsValid = exports.generateChecksumAddress = exports.generateWallet = exports.generateKeyPair = void 0;
+exports.recoverAddressFromSignedMessage = exports.recoverPublicKeyFromSignedMessage = exports.verifySignatureAddress = exports.generateSignature = exports.formatXe = exports.toMicroXe = exports.xeStringFromMicroXe = exports.privateKeyToChecksumAddress = exports.privateKeyToPublicKey = exports.publicKeyToChecksumAddress = exports.restoreWalletFromPrivateKey = exports.checksumAddressIsValid = exports.generateChecksumAddress = exports.generateWallet = exports.generateKeyPair = void 0;
 var sha256_1 = __importDefault(require("crypto-js/sha256"));
 var elliptic_1 = __importDefault(require("elliptic"));
 var js_sha3_1 = require("js-sha3");
@@ -41,6 +41,13 @@ function checksumAddressIsValid(address) {
     return true;
 }
 exports.checksumAddressIsValid = checksumAddressIsValid;
+function restoreWalletFromPrivateKey(privateKey) {
+    var keyPair = ec.keyFromPrivate(privateKey);
+    var publicKey = keyPair.getPublic(true, 'hex').toString();
+    var address = publicKeyToChecksumAddress(publicKey);
+    return { privateKey: privateKey, publicKey: publicKey, address: address };
+}
+exports.restoreWalletFromPrivateKey = restoreWalletFromPrivateKey;
 function publicKeyToChecksumAddress(publicKey) {
     var hash = (0, js_sha3_1.keccak256)(publicKey);
     var addr = 'xe_' + hash.substring(hash.length - 40, hash.length);
@@ -116,6 +123,7 @@ exports["default"] = {
     generateWallet: generateWallet,
     generateChecksumAddress: generateChecksumAddress,
     checksumAddressIsValid: checksumAddressIsValid,
+    restoreWalletFromPrivateKey: restoreWalletFromPrivateKey,
     publicKeyToChecksumAddress: publicKeyToChecksumAddress,
     privateKeyToChecksumAddress: privateKeyToChecksumAddress,
     privateKeyToPublicKey: privateKeyToPublicKey,
