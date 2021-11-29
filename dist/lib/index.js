@@ -81,7 +81,7 @@ exports.formatXe = formatXe;
 function generateSignature(privateKey, msg) {
     var msgHash = (0, sha256_1["default"])(msg).toString();
     var msgHashByteArray = elliptic_1["default"].utils.toArray(msgHash, 'hex');
-    var signatureObj = ec.sign(msgHashByteArray, privateKey, 'hex', { canonical: true });
+    var signatureObj = ec.sign(msgHashByteArray, ec.keyFromPrivate(privateKey), 'hex', { canonical: true });
     var r = signatureObj.r.toString('hex', 32);
     var s = signatureObj.s.toString('hex', 32);
     var i = (typeof signatureObj.recoveryParam === 'number')

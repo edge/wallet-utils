@@ -5,7 +5,6 @@ declare type ChecksumAddress = Address;
 declare type Message = string;
 declare type PrivateKey = Uint8Array | Buffer | string | number[] | elliptic.ec.KeyPair;
 declare type PublicKey = string;
-declare type SigningPrivateKey = Buffer | elliptic.ec.KeyPair;
 declare type Signature = string;
 declare type Wallet = {
     address: Address;
@@ -22,7 +21,7 @@ export declare function privateKeyToChecksumAddress(privateKey: PrivateKey): Che
 export declare function xeStringFromMicroXe(mxe: number, format: boolean): string;
 export declare function toMicroXe(xe: string | number): number;
 export declare function formatXe(xe: string | number, format: boolean): string;
-export declare function generateSignature(privateKey: SigningPrivateKey, msg: Message): Signature;
+export declare function generateSignature(privateKey: string, msg: Message): Signature;
 export declare function verifySignatureAddress(msg: string, signature: Signature, address: Address): boolean;
 export declare function recoverPublicKeyFromSignedMessage(msg: Message, signature: Signature): PublicKey;
 export declare function recoverAddressFromSignedMessage(msg: Message, signature: Signature): Address;
