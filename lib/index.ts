@@ -6,20 +6,23 @@ import SHA256 from 'crypto-js/sha256'
 import elliptic from 'elliptic'
 import { keccak256 } from 'js-sha3'
 
-type Address = string
-type ChecksumAddress = Address
-type Message = string
-type PrivateKey = Uint8Array | Buffer | string | number[] | elliptic.ec.KeyPair
-type PublicKey = string
-type Signature = string
+const ec = new elliptic.ec('secp256k1')
 
-type Wallet = {
+//
+// Types
+//
+export type Address = string
+export type ChecksumAddress = Address
+export type Message = string
+export type PrivateKey = Uint8Array | Buffer | string | number[] | elliptic.ec.KeyPair
+export type PublicKey = string
+export type Signature = string
+
+export type Wallet = {
   address: Address
   privateKey: PrivateKey
   publicKey: PublicKey
 }
-
-const ec = new elliptic.ec('secp256k1')
 
 //
 // Key/account generation
