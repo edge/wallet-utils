@@ -1,6 +1,6 @@
 {
   "name": "@edge/wallet-utils",
-  "version": "0.14.2",
+  "version": "0.15.0",
   "description": "Wallet utility library for the XE blockchain",
   "main": "dist/lib/index.js",
   "author": "Edge Network <core@edge.network>",
@@ -11,8 +11,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "build": "tsc",
-    "build-and-test": "npm run build && npm test",
-    "test": "node dist/lib/tests.js"
+    "test": "tsc lib/tests.ts",
+    "test:dist": "tsc && node dist/lib/tests.js"
   },
   "dependencies": {
     "crypto-js": "^4.0.0",

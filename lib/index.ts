@@ -11,7 +11,6 @@ type ChecksumAddress = Address
 type Message = string
 type PrivateKey = Uint8Array | Buffer | string | number[] | elliptic.ec.KeyPair
 type PublicKey = string
-type SigningPrivateKey = Buffer | elliptic.ec.KeyPair
 type Signature = string
 
 type Wallet = {
@@ -98,10 +97,10 @@ export function formatXe(xe: string|number, format: boolean): string {
 //
 // Signatures
 //
-export function generateSignature(privateKey: SigningPrivateKey, msg: Message): Signature {
+export function generateSignature(privateKey: string, msg: Message): Signature {
   const msgHash = SHA256(msg).toString()
   const msgHashByteArray = elliptic.utils.toArray(msgHash, 'hex')
-  const signatureObj = ec.sign(msgHashByteArray, privateKey, 'hex', { canonical: true })
+  const signatureObj = ec.sign(msgHashByteArray, ec.keyFromPrivate(privateKey), 'hex', { canonical: true })
   const r = signatureObj.r.toString('hex', 32)
   const s = signatureObj.s.toString('hex', 32)
   const i = (typeof signatureObj.recoveryParam === 'number')
