@@ -11,8 +11,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "build": "tsc",
-    "build-and-test": "npm run build && npm test",
-    "test": "node dist/lib/tests.js"
+    "test": "tsc lib/tests.ts",
+    "test:dist": "tsc && node dist/lib/tests.js"
   },
   "dependencies": {
     "crypto-js": "^4.0.0",
