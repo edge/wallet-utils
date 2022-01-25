@@ -6,6 +6,10 @@ Wallet utility library for the XE blockchain
 
 [![npm version](https://img.shields.io/npm/v/@edge/wallet-utils)](https://www.npmjs.com/package/@edge/wallet-utils) [![npm downloads](https://img.shields.io/npm/dt/@edge/wallet-utils)](https://www.npmjs.com/package/@edge/wallet-utils) [![license](https://img.shields.io/npm/l/@edge/wallet-utils)](LICENSE.md)
 
+## Contributing
+
+Interested in contributing to the project? Amazing! Before you do, please have a quick look at our [Contributor Guidelines](CONTRIBUTING.md) where we've got a few tips to help you get started.
+
 ## License
 
 Edge is the infrastructure of Web3. A peer-to-peer network and blockchain providing high performance decentralised web services, powered by the spare capacity all around us.
